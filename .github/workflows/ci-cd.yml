@@ -2,9 +2,9 @@ name: Laravel
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ main ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ main ]
 
 jobs:
   laravel_tests:
@@ -15,8 +15,6 @@ jobs:
       run: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
     - name: Update
       run: apt-get update
-    - name: Install dos2Unix
-      run: apt-get install -y dos2unix
     - name: Remove lists
       run: rm -rf /var/lib/apt/lists/*
     - name: Install Dependencies
