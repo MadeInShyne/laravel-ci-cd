@@ -14,10 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install Composer
-      run: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && apt-get update \
-    && apt-get install -y dos2unix \
-    && rm -rf /var/lib/apt/lists/*
+      run: | 
+      curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+      apt-get update
+      apt-get install -y dos2unix
+      rm -rf /var/lib/apt/lists/*
     - name: Install Dependencies
       run: composer install --optimize-autoloader --no-dev
     - name: Generate key
