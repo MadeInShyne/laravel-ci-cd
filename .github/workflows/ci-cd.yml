@@ -22,13 +22,16 @@ jobs:
       run: composer validate --strict
     - name: Install Dependencies
       run: composer install --optimize-autoloader --no-dev
+    - name: Install PHPUnit
+      run: composer require --dev phpunit/phpunit ^11
     - name: Copy env file
       run: cp .env.example .env
     - name: Generate key
       run: php artisan key:generate
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
       run: vendor/bin/phpunit
-
+    - name:  Couverture de code
+      run: vendor/bin/phpunit --coverage-html public/test-coverage
   push_to_registry:
     name: Push Docker image to the Github Registry
     runs-on: ubuntu-latest
