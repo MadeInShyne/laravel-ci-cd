@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install Composer
-      run: | 
+      run: |
       curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
       apt-get update
       apt-get install -y dos2unix
