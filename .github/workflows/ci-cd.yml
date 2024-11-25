@@ -23,7 +23,7 @@ jobs:
     - name: Install Dependencies
       run: composer install --optimize-autoloader --no-dev
     - name: Install PHPUnit
-      run: composer require --dev phpunit/phpunit ^11
+      run: composer require --dev phpunit/phpunit ^10
     - name: Copy env file
       run: cp .env.example .env
     - name: Generate key
