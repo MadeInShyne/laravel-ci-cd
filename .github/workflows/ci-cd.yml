@@ -30,8 +30,6 @@ jobs:
       run: php artisan key:generate
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
       run: vendor/bin/phpunit
-    - name:  Couverture de code
-      run: vendor/bin/phpunit --coverage-html public/test-coverage
   push_to_registry:
     name: Push Docker image to the Github Registry
     runs-on: ubuntu-latest
