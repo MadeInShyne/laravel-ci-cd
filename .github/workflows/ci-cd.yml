@@ -12,6 +12,8 @@ jobs:
       image: php:8.1-cli
     runs-on: ubuntu-latest
     steps:
+    - name: View all directories
+      run: ls -ls
     - name: Install Composer
       run: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
     - name: Update
