@@ -27,10 +27,7 @@ jobs:
     - name: Generate key
       run: php artisan key:generate
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
-      env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
-      run: php artisan test
+      run: vendor/bin/phpunit
 
   push_to_registry:
     name: Push Docker image to the Github Registry
