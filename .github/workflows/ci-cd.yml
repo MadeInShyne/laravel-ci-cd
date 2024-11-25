@@ -17,9 +17,7 @@ jobs:
     - name: Install Composer
       run: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
     - name: Update
-      run: apt-get update
-    - name: Remove lists
-      run: rm -rf /var/lib/apt/lists/*
+      run: sudo apt-get update
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
     - name: Install Dependencies
